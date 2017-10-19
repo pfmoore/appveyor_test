@@ -1,2 +1,8 @@
+version: 1.0.{build}
+build: off
+install:
+  - ps: Invoke-WebRequest https://www.python.org/ftp/python/3.6.3/python-3.6.3-amd64.exe -OutFile python-3.6.3-amd64.exe
 test_script:
   - ps: Write-Host "This is PowerShell"
+  - ps: ./python-3.6.3-amd64.exe /quiet LauncherOnly=1
+  - ps: py --help
